@@ -70,6 +70,11 @@ on conflict do nothing;
 ## Run Locally
 
 1. Clone the github repository:
+
+```
+git clone https://github.com/Arjun83-png/401k-Manager.git
+```
+
 2. cd into 401k manager and run **npm install** and \*\*npm install @supabase/supabase-js
 3. Create a file named **.env.local** in the root and paste your Supabase Project URL and ANON keys:
 
