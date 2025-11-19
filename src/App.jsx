@@ -93,15 +93,13 @@ function App() {
 
     setLoading(true);
 
-    // Upsert into row id=1 for demo
-    const { error } = await supabase.from('contribution_settings').upsert(
+    // Update into row id=1 for demo
+    const { error } = await supabase.from('contribution_settings').update(
       {
-        id: 1,
         contribution_type: contributionType,
         contribution_value: valueNum,
       },
-      { onConflict: 'id' }
-    );
+    ).eq('id', 1);
 
     if (error) {
       console.error(error);
