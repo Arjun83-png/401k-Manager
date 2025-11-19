@@ -1,0 +1,361 @@
+.app-root {
+  min-height: 100vh;
+  width: 100%;
+  background: #0f172a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* Three-column layout: left (form) + middle (impact) + right (YTD card) */
+.page-layout {
+  display: flex;
+  gap: 1.4rem;
+  width: 100%;
+  padding: 1.8rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Shared card styling */
+.card,
+.impact-card,
+.ytd-card {
+  background: #020617;
+  border-radius: 1.5rem;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #e5e7eb;
+}
+
+/* Column widths: left, middle, right */
+.card {
+  flex: 1.05;
+}
+
+.impact-card {
+  flex: 1;
+}
+
+.ytd-card {
+  flex: 1;
+}
+
+/* Left card: contribution settings */
+.app-title {
+  font-size: 1.8rem;
+  margin: 0 0 0.25rem;
+  color: #f9fafb;
+}
+
+.app-subtitle {
+  margin: 0 0 1.75rem;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section {
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+.section-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.radio-option input[type='radio'] {
+  accent-color: #22c55e;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-label {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.input-with-addon {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.input {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.input::placeholder {
+  color: #6b7280;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.25);
+}
+
+.input-compact {
+  max-width: 80px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.addon {
+  padding: 0.45rem 0.65rem;
+  border-radius: 0.6rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.summary-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.primary-button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #22c55e, #16a34a);
+  color: #022c22;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.1s ease;
+}
+
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(34, 197, 94, 0.4);
+}
+
+.primary-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.status-message {
+  font-size: 0.85rem;
+  color: #a5b4fc;
+}
+
+/* Middle card: impact at retirement */
+.impact-title {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #f9fafb;
+}
+
+.impact-subtitle {
+  margin: 0 0 0.7rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.impact-section {
+  padding: 0.85rem 0.95rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.impact-section-highlight {
+  margin-top: 0.75rem;
+  background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.18), #020617);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.impact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  column-gap: 0.8rem;
+}
+
+.impact-label {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.impact-value {
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.impact-value-strong {
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.impact-age-input {
+  justify-content: flex-end;
+}
+
+.impact-age-arrow {
+  opacity: 0.8;
+}
+
+.impact-age-target {
+  font-weight: 500;
+}
+
+.impact-age-note {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.impact-delta {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+.impact-empty {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.impact-footnote {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Right card: mock YTD data */
+.ytd-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #f9fafb;
+}
+
+.ytd-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.ytd-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+}
+
+.ytd-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.ytd-label {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.ytd-value {
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ytd-value-strong {
+  font-weight: 600;
+}
+
+.ytd-progress-section {
+  margin-top: 0.9rem;
+}
+
+.ytd-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.ytd-progress-number {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ytd-progress-bar {
+  width: 100%;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #020617;
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  overflow: hidden;
+}
+
+.ytd-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(to right, #22c55e, #16a34a);
+}
+
+.ytd-footnote {
+  margin: 0.4rem 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Stack cards vertically on small screens */
+@media (max-width: 1100px) {
+  .page-layout {
+    flex-direction: column;
+  }
+}
